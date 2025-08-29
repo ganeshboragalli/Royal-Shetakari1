@@ -220,7 +220,7 @@
   </div>
 
   <script>
-    const blynkToken = 'zh-JtDT1lUsTzInTwXqf3bsfuI67w3yS';
+    const blynkToken = 'Y72JM6i9Q5a31QQ1AKe9ts-_l4qVO8Aa';
 
     const tempBar = new ProgressBar.SemiCircle('#temp-bar', {
       strokeWidth: 12,
@@ -272,7 +272,7 @@
           humBar.animate(data / 100);
         });
 
-      fetch(`https://blynk.cloud/external/api/get?token=${blynkToken}&v3`)
+      fetch(`https://blynk.cloud/external/api/get?token=${blynkToken}&v2`)
         .then(response => response.text())
         .then(data => {
           document.getElementById('soil-val').textContent = data;
@@ -284,7 +284,7 @@
     }
 
     function checkPumpState() {
-      fetch(`https://blynk.cloud/external/api/get?token=${blynkToken}&v12`)
+      fetch(`https://blynk.cloud/external/api/get?token=${blynkToken}&v3`)
         .then(response => response.text())
         .then(state => {
           const isPumpOn = state === '1';
@@ -302,3 +302,4 @@
   </script>
 </body>
 </html>
+
